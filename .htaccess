@@ -1,0 +1,9 @@
+DirectoryIndex index.php index.html index.htm
+
+# Block direct access to source/config files only (old-style syntax,
+# more compatible with InfinityFree's LiteSpeed server than
+# "Require all denied" / mod_rewrite, which can trigger 403 there)
+<FilesMatch "\.(sql|md|map)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
